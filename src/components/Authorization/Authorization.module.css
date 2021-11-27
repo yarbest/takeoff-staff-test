@@ -1,0 +1,88 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1.8rem;
+}
+
+.form {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  background: url('assets/email-icon.svg') left 2rem center no-repeat;
+}
+
+.password {
+  margin-top: 2rem;
+  background: url('assets/password-icon.svg') left 2rem center no-repeat;
+}
+
+.error {
+  position: relative;
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.email,
+.password {
+  padding: 1rem 1rem 1rem 6.5rem;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-size: 2.5rem 3rem;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+:is(.email, .password):-internal-autofill-selected {
+  box-shadow: 0 0 0 30px #274fc7 inset;
+  -webkit-text-fill-color: #ffffff;
+  /* перебиваю встроенные стили браузера */
+}
+
+:is(.email, .password)::placeholder {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+:is(.email, .password):hover {
+  background-color: rgb(64, 121, 241);
+}
+
+.submitBtn {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+  background-color: rgb(64, 121, 241);
+  color: #ffffff;
+}

@@ -1,0 +1,62 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.contacts {
+  list-style: none;
+}
+
+.contact {
+  margin: 2rem 0;
+  font-size: 1.8rem;
+}
+
+.signOutBtn {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signOutBtn:hover {
+  background-color: rgb(64, 121, 241);
+  color: #ffffff;
+}
+
+.addNewBtn {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: rgb(64, 121, 241);
+  border: 1px solid rgb(64, 121, 241);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addNewBtn:hover {
+  background-color: rgb(64, 121, 241);
+  color: #ffffff;
+}

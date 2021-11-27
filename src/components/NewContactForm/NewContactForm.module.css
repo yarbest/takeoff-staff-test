@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 5rem;
+}
+.formTitle {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #000;
+  font-size: 2rem;
+}
+
+.name,
+.phone {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+:is(.name, .phone)::placeholder {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+:is(.name, .phone):hover {
+  background-color: rgb(64, 121, 241);
+}
+
+:is(.name, .phone):hover::placeholder {
+  color: #ffffff;
+}
+
+:is(.name, .phone):hover {
+  color: #ffffff;
+}
+
+.submitBtn {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: rgb(64, 121, 241);
+  border: 1px solid rgb(64, 121, 241);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+  background-color: rgb(64, 121, 241);
+  color: #ffffff;
+}

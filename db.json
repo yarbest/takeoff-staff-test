@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "yar1@gmail.com",
+      "password": "88888888",
+      "contacts": [
+        {
+          "name": "11",
+          "phone": "11"
+        },
+        {
+          "name": "yar1",
+          "phone": "yar1"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "email": "yar2@gmail.com",
+      "password": "99999999",
+      "contacts": [
+        {
+          "name": "yar2",
+          "phone": "yar2"
+        },
+        {
+          "name": "sd",
+          "phone": "ssf"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
