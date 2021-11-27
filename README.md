@@ -1,6 +1,12 @@
 Download all packages: npm i
 Launch app: npm start
 Simultaneously launch server: json-server db.json --routes routes.json --port 3001
+Data for authorization:  
+"email": "yar1@gmail.com",
+"password": "88888888",
+or
+"email": "yar2@gmail.com",
+"password": "99999999",
 
 # Getting Started with Create React App
 

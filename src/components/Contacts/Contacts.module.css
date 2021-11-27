@@ -21,9 +21,39 @@
   list-style: none;
 }
 
+.contacts:empty::after {
+  content: 'No contacts found';
+  font-size: 1.8rem;
+}
+
 .contact {
+  display: flex;
   margin: 2rem 0;
   font-size: 1.8rem;
+}
+
+.contactData {
+  margin-right: auto;
+}
+
+.btnContactEdit {
+  margin-left: 1rem;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.btnContactDelete {
+  margin-left: 1rem;
+  color: red;
+  font-weight: 300;
+  cursor: pointer;
+  border: 1px solid rgb(255, 88, 88);
+  border-radius: 5px;
+  padding: 2px 5px;
 }
 
 .signOutBtn {

@@ -14,10 +14,15 @@ import { useClickOutside } from './hooks/useClickOutside';
 function App() {
   const modalRef = useRef();
   const [modalVisible, setModalVisible] = useState(false);
-  useClickOutside(modalRef, () => setModalVisible(false));
+  const [valuesToEdit, setValuesToEdit] = useState({ name: '', phone: '' });
   const [currentUser, setCurrentUser] = useState(
     () => JSON.parse(localStorage.getItem('currentUser')) || { id: '', email: '', contacts: [] }
   );
+  const handleModalClose = () => {
+    setModalVisible(false);
+    setValuesToEdit({ name: '', phone: '' });
+  };
+  useClickOutside(modalRef, handleModalClose);
 
   return (
     <>
@@ -27,7 +32,12 @@ function App() {
           path="/contacts"
           element={
             <ProtectedRoute>
-              <Contacts currentUser={currentUser} onModalOpen={() => setModalVisible(true)} />
+              <Contacts
+                currentUser={currentUser}
+                onModalOpen={() => setModalVisible(true)}
+                onContactDelete={(currentUser) => setCurrentUser(currentUser)}
+                onValuesToEditChange={(values) => setValuesToEdit(values)}
+              />
             </ProtectedRoute>
           }
         />
@@ -35,8 +45,12 @@ function App() {
       </Routes>
       <Background />
       <ToastContainer />
-      <Modal modalRef={modalRef} modalVisible={modalVisible} onModalClose={() => setModalVisible(false)}>
-        <NewContactForm onNewContactAdd={(currentUser) => setCurrentUser(currentUser)} onModalClose={() => setModalVisible(false)} />
+      <Modal modalRef={modalRef} modalVisible={modalVisible} onModalClose={handleModalClose}>
+        <NewContactForm
+          valuesToEdit={valuesToEdit}
+          onNewContactAdd={(currentUser) => setCurrentUser(currentUser)}
+          onModalClose={handleModalClose}
+        />
       </Modal>
     </>
   );

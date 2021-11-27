@@ -9,8 +9,8 @@
           "phone": "11"
         },
         {
-          "name": "yar1",
-          "phone": "yar1"
+          "name": "11",
+          "phone": "111"
         }
       ],
       "id": 1
@@ -20,12 +20,8 @@
       "password": "99999999",
       "contacts": [
         {
-          "name": "yar2",
-          "phone": "yar2"
-        },
-        {
           "name": "sd",
-          "phone": "ssf"
+          "phone": "yar2"
         }
       ],
       "id": 2

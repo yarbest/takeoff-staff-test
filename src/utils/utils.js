@@ -46,6 +46,30 @@ export const addNewContact = async (values) => {
   return updatedUserData;
 };
 
+export const deleteContact = async (phone) => {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const { id, ...currentUserData } = currentUser;
+  currentUserData.contacts = currentUserData.contacts.filter((contact) => contact.phone !== phone);
+
+  const response = await fetch(`http://localhost:3001/users/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(currentUserData),
+  });
+
+  if (!response.ok) {
+    error('Couldn"t remove contact!');
+    return;
+  }
+
+  const updatedUserData = await response.json();
+  localStorage.setItem('currentUser', JSON.stringify(updatedUserData));
+
+  return updatedUserData;
+};
+
 export const login = async (values, onSuccess) => {
   const users = await fetchUsers();
   const currentUser = getAuthorizedUser(users, values);
@@ -77,3 +101,6 @@ export const error = (text) => {
     progress: undefined,
   });
 };
+
+export const checkIfPhoneExists = (phone) =>
+  JSON.parse(localStorage.getItem('currentUser')).contacts.find((contact) => contact.phone === phone);

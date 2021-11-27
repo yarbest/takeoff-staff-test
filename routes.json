@@ -1,4 +1,5 @@
 {
   "/users/:user": "/users/:user",
-  "/users/:user/contacts": "/users/:user/contacts"
+  "/users/:user/contacts": "/users/:user/contacts",
+  "/users/:user/contacts/:phone": "/users/:user/contacts/:phone"
 }
